@@ -7,9 +7,9 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 
-import AppStep0 from './app_step0/index';     // 引入入口文件
+import AppStep0 from './app_step0';     // 引入入口文件
 
 type Props = {};
 export default class App extends Component<Props> {

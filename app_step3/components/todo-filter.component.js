@@ -6,6 +6,7 @@ import {
   StyleSheet,
 } from 'react-native';
 
+import { FILITER_KEYS } from '../config/enum';               // 引用变量
 
 export default class TodoFilterComponent extends Component {
   constructor(props) {
@@ -32,9 +33,9 @@ export default class TodoFilterComponent extends Component {
   render() {
     return (
       <View style={styles.wrapper}>
-        {this.renderFilter('All')}
-        {this.renderFilter('Undo')}
-        {this.renderFilter('Finish')}
+        {this.renderFilter(FILITER_KEYS.ALL)}
+        {this.renderFilter(FILITER_KEYS.UNDO)}
+        {this.renderFilter(FILITER_KEYS.FINISH)}
       </View>
     );
   }

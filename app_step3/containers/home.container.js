@@ -6,6 +6,8 @@ import {
 import { connect } from 'react-redux';    // 引入 react-redux
 import { changeTodoStatus, addNewTodo, filterTodoList } from '../actions/index';  // 引入 action  
 
+import { FILITER_KEYS } from '../config/enum';             // 引用变量
+
 import TodoFormComponent from '../components/todo-form.component';
 import TodoListComponent from '../components/todo-list.component';
 import TodoFilterComponent from '../components/todo-filter.component';
@@ -45,11 +47,11 @@ class HomeContainer extends Component {
 
 const getFilterTodos = (todos, filter) => {               // 定义 TODO 过滤方法，返回新的数据
   switch (filter) {
-    case 'All':
+    case FILITER_KEYS.ALL:
       return todos;
-    case 'Undo':
+    case FILITER_KEYS.UNDO:
       return todos.filter(todo => !todo.status);
-    case 'Finish':
+    case FILITER_KEYS.FINISH:
       return todos.filter(todo => todo.status);
     default:
       throw new Error('Unknown filter: ' + filter);

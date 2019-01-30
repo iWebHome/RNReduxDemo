@@ -9,14 +9,17 @@
 import React, {Component} from 'react';
 import {StyleSheet, View} from 'react-native';
 
-import AppStep0 from './app_step0';     // 引入入口文件
+// 引入入口文件
+import AppStep0 from './app_step0';
+import AppStep1 from './app_step1';
+import AppStep2 from './app_step2';
 
 type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <AppStep0/>
+        <AppStep2/>
       </View>
     );
   }

@@ -12,8 +12,8 @@ export default class TodoListComponent extends Component {
     super(props);
   }
 
-  toggleTodo(index) {       // 点击事件，通过 props.method 调用容器组件的方法
-    this.props.toggleTodo && this.props.toggleTodo(index);
+  toggleTodo(id) {      // 修改执行方法，index => id ，本来可以不用修改参数，但为了统一起见，我们还是修改。
+    this.props.toggleTodo && this.props.toggleTodo(id);    // index => id
   }
 
   render() {
@@ -22,7 +22,7 @@ export default class TodoListComponent extends Component {
         {this.props.todoList.map((todo, index) => {
           var finishStyle = { textDecorationLine: 'line-through', color: 'gray' };
           return (
-            <TouchableOpacity key={index} onPress={() => { this.toggleTodo(index) }}>
+            <TouchableOpacity key={index} onPress={() => { this.toggleTodo(todo.id) }}>
               <Text style={[styles.todo, todo.status && finishStyle]}>{todo.title}</Text>
             </TouchableOpacity>
           );

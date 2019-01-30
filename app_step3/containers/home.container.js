@@ -21,9 +21,9 @@ class HomeContainer extends Component {
     dispatch(addNewTodo(text));                // 执行 dispatch(action)
   }
 
-  toggleTodo(index) {
+  toggleTodo(id) {
     let { dispatch } = this.props;              // 从 props 里解构出 dispatch
-    dispatch(changeTodoStatus(index));          // 执行 dispatch(action)
+    dispatch(changeTodoStatus(id));          // 执行 dispatch(action)
   }
   
   filterTodo(filter) {
@@ -36,7 +36,7 @@ class HomeContainer extends Component {
       <View>
         <TodoFormComponent addTodo={(text) => { this.addTodo(text) }} />
         {/**注意，这里的 todoList 是 mapStateToProps 返回的 key  （运行时，注释会报错，请删除注释） */}
-        <TodoListComponent todoList={this.props.todoList} toggleTodo={(index) => { this.toggleTodo(index) }} />
+        <TodoListComponent todoList={this.props.todoList} toggleTodo={(id) => { this.toggleTodo(id) }} />
         <TodoFilterComponent filter={this.props.currentFilter} filterTodo={(filter) => { this.filterTodo(filter) }} />
       </View>
     );

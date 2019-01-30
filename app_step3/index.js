@@ -13,9 +13,9 @@ import HomeContainer from './containers/home.container';  // 引入容器组件
 // 这是初始数据
 const initState = {
   todos: [
-    { title: '吃早饭', status: true },
-    { title: '打篮球', status: false },
-    { title: '修电脑', status: false },
+    { id: 1, title: '吃早饭', status: true },    // 添加 id 属性
+    { id: 2, title: '打篮球', status: false },   // 添加 id 属性
+    { id: 3, title: '修电脑', status: false },   // 添加 id 属性
   ],
   filter: 'All', // 'All'|'Undo'|'Finish'    // 添加新的初始 `state`
 };

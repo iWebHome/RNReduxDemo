@@ -5,18 +5,20 @@ import { TOGGLE_TODO_STATUS, ADD_NEW_TODO, SET_FILTER } from '../actions/index';
 function todoList(state = [], action) {
   switch (action.type) {                                  // 匹配响应 action，创建并返回新的 state (注意，不能修改state)
     case TOGGLE_TODO_STATUS:
-      var todo = state[action.index];
+      var index = state.findIndex((todo) => { return todo.id == action.id });
+      var todo = state.find((todo) => { return todo.id == action.id });
       return [
-        ...state.slice(0, action.index),
+        ...state.slice(0, index),
         Object.assign({}, todo, {
           status: !todo.status
         }),
-        ...state.slice(action.index + 1)
+        ...state.slice(index + 1)
       ];
     case ADD_NEW_TODO:                                // 定义了新的匹配类型，以响应新的 action
       return [
         ...state,
         {
+          id: state.length + 1,
           title: action.text,
           status: false,
         }

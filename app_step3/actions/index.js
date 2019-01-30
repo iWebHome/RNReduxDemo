@@ -12,11 +12,11 @@ export const SET_FILTER = 'SET_FILTER';         // 添加新的 action 类型
 
 /**
  * 更改 TODO 状态
- * @param  {Number} index TODO索引
+ * @param  {Number} id TODO索引
  * @return {Object}       action
  */
-export function changeTodoStatus(index) {
-  return { type: TOGGLE_TODO_STATUS, index };
+export function changeTodoStatus(id) {
+  return { type: TOGGLE_TODO_STATUS, id };
 }
 
 export function addNewTodo(text) { // 定义 action 创建函数

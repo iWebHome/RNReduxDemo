@@ -14,13 +14,14 @@ import AppStep0 from './app_step0';
 import AppStep1 from './app_step1';
 import AppStep2 from './app_step2';
 import AppStep3 from './app_step3';
+import AppStep4 from './app_step4';
 
 type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <AppStep3/>
+        <AppStep4/>
       </View>
     );
   }

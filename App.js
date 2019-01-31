@@ -16,13 +16,14 @@ import AppStep2 from './app_step2';
 import AppStep3 from './app_step3';
 import AppStep4 from './app_step4';
 import AppStep5 from './app_step5';
+import AppStep6 from './app_step6';
 
 type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <AppStep5/>
+        <AppStep6 />
       </View>
     );
   }
